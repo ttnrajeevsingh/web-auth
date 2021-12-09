@@ -10,7 +10,7 @@ const buttonStyle = {
 const hideButton = {
   padding: 10,
   margin: 5,
-  display:'none'
+  // display:'none'
 }
 class App extends Component {
 
@@ -35,7 +35,7 @@ class App extends Component {
             style={buttonStyle} 
             onClick={createCreds}
           >
-            Login with Biometric data
+            Register
           </button>
 
           <button 
@@ -43,7 +43,7 @@ class App extends Component {
             className='hide' 
             onClick={validateCreds}
           >
-            Validate Creds
+            Login
           </button>
 
         </header>

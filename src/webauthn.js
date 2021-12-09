@@ -78,19 +78,43 @@ const validateCreds = ()=>{
     // here for DEMO purposes only
     const rawId = localStorage.getItem('rawId');
     const AUTH_CHALLENGE = 'someRandomString';
+    // const publicKey = {
+    //     // your domain
+    //     rpId: "main--focused-nobel-332a98.netlify.app/",
+    //     // random, cryptographically secure, at least 16 bytes
+    //     challenge: enc.encode(AUTH_CHALLENGE),
+    //     allowCredentials: [{
+    //       id: strToBin(rawId),
+    //       type: 'public-key'
+    //     }],
+    //     authenticatorSelection: { 
+    //         userVerification: "discouraged" 
+    //       },
+    // };
     const publicKey = {
-        // your domain
-        rpId: "main--focused-nobel-332a98.netlify.app/",
-        // random, cryptographically secure, at least 16 bytes
-        challenge: enc.encode(AUTH_CHALLENGE),
-        allowCredentials: [{
-          id: strToBin(rawId),
-          type: 'public-key'
-        }],
-        authenticatorSelection: { 
-            userVerification: "discouraged" 
-          },
-    };
+    challenge: enc.encode(AUTH_CHALLENGE),
+        rp: {
+            name: "Example CORP",
+            id  : "localhost"
+        },
+        user: {
+            id: new Uint8Array(16),
+            name: "jdoe@example.com",
+            displayName: "John Doe"
+        },
+        pubKeyCredParams: [
+            {
+            type: "public-key",
+            alg: -7
+            }
+        ],authenticatorSelection: {
+            authenticatorAttachment: "platform" //cross-platform is working fine
+        },
+        timeout: 60000
+        };
+        // const credential = navigator.credentials.create({
+        //     publicKey: publicKey 
+        // });
     ////// END server generated info //////
 
     // browser receives the publicKey object and passes it to WebAuthn "get" API
