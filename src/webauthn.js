@@ -95,7 +95,7 @@ const validateCreds = ()=>{
     challenge: enc.encode(AUTH_CHALLENGE),
         rp: {
             name: "Example CORP",
-            id  : "localhost"
+            id  : "main--focused-nobel-332a98.netlify.app"
         },
         user: {
             id: new Uint8Array(16),
