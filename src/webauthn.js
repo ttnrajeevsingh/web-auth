@@ -5,9 +5,9 @@ const enc = new TextEncoder();
 
 // another function to go from string to ByteArray, but we first encode the
 // string as base64 - note the use of the atob() function
-function strToBin(str) {
-    return Uint8Array.from(atob(str), c => c.charCodeAt(0));
-}
+// function strToBin(str) {
+//     return Uint8Array.from(atob(str), c => c.charCodeAt(0));
+// }
 
 // function to encode raw binary to string, which is subsequently
 // encoded to base64 - note the use of the btoa() function
@@ -76,7 +76,7 @@ const validateCreds = ()=>{
     ////// START server generated info //////
     // Usually the below publicKey object is constructed on your server
     // here for DEMO purposes only
-    const rawId = localStorage.getItem('rawId');
+  //  const rawId = localStorage.getItem('rawId');
     const AUTH_CHALLENGE = 'someRandomString';
     // const publicKey = {
     //     // your domain
