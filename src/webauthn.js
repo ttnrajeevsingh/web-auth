@@ -36,7 +36,7 @@ const createCreds = ()=> {
             displayName: 'dvas0004'
         },
         authenticatorSelection: { 
-            userVerification: "preferred" 
+            userVerification: "discouraged" 
         },
         attestation: 'direct',
         pubKeyCredParams: [
@@ -71,7 +71,7 @@ const createCreds = ()=> {
         
 }
 
-const validateCreds = async function(){
+const validateCreds = ()=>{
     
     ////// START server generated info //////
     // Usually the below publicKey object is constructed on your server
@@ -80,7 +80,7 @@ const validateCreds = async function(){
     const AUTH_CHALLENGE = 'someRandomString';
     const publicKey = {
         // your domain
-        rpId: "https://main--focused-nobel-332a98.netlify.app/",
+        rpId: "main--focused-nobel-332a98.netlify.app/",
         // random, cryptographically secure, at least 16 bytes
         challenge: enc.encode(AUTH_CHALLENGE),
         allowCredentials: [{
@@ -88,18 +88,16 @@ const validateCreds = async function(){
           type: 'public-key'
         }],
         authenticatorSelection: { 
-            userVerification: "preferred" 
+            userVerification: "discouraged" 
           },
     };
     ////// END server generated info //////
 
     // browser receives the publicKey object and passes it to WebAuthn "get" API
-    const res = await navigator.credentials.get({
+  navigator.credentials.get({
         publicKey: publicKey
-      })
-
-    
-    console.log(res);
+      }).then(function (res) {
+        console.log(res);
 
     // here we build an object containing the results, to be sent to the server
     // usually "extractedData" is POSTed to your server
@@ -124,7 +122,13 @@ const validateCreds = async function(){
     } else {
         alert("Unauthorized");
     }
-}
+
+    }).catch(function (err) {
+      // No acceptable authenticator or user refused consent. Handle appropriately.
+    });
+
+    
+    }
 
 ///////// END WEBAUTHN FUNCTIONS /////////
 

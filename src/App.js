@@ -15,33 +15,31 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
 
-          <img style={{
+          {/* <img style={{
               height: "20vh"
             }} 
             src="cyber-security.svg" 
-            alt="" />
+            alt="" /> */}
           
           <p>
-            WebAuthn API Demo
+            Biometric auth Demo
           </p>
           
-          <p>
-            <a href="https://blog.davidvassallo.me">Check blog post for more details</a>
-          </p>
+          
           
           <button 
             style={buttonStyle} 
             onClick={createCreds}
           >
-            Register Creds
+            Login with Biometric data
           </button>
 
-          <button 
+          {/* <button 
             style={buttonStyle} 
             onClick={validateCreds}
           >
             Validate Creds
-          </button>
+          </button> */}
 
         </header>
       </div>
