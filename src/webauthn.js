@@ -108,7 +108,8 @@ const validateCreds = ()=>{
             alg: -7
             }
         ],authenticatorSelection: {
-            authenticatorAttachment: "platform" //cross-platform is working fine
+            authenticatorAttachment: "platform", //cross-platform is working fine,
+            userVerification: "discouraged" 
         },
         timeout: 60000
         };
