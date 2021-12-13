@@ -36,7 +36,7 @@ const createCreds = ()=> {
             displayName: 'dvas0004'
         },
         authenticatorSelection: { 
-            userVerification: "discouraged" 
+            userVerification: "prefered" 
         },
         attestation: 'direct',
         pubKeyCredParams: [
@@ -95,7 +95,7 @@ const validateCreds = ()=>{
     challenge: enc.encode(AUTH_CHALLENGE),
         rp: {
             name: "Example CORP",
-            id  : "main--focused-nobel-332a98.netlify.app"
+            id  : "focused-nobel-332a98.netlify.app"
         },
         user: {
             id: new Uint8Array(16),
@@ -109,7 +109,7 @@ const validateCreds = ()=>{
             }
         ],authenticatorSelection: {
             authenticatorAttachment: "platform", //cross-platform is working fine,
-            userVerification: "discouraged" 
+            userVerification: "preferred" 
         },
         timeout: 60000
         };
