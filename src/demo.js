@@ -20,7 +20,7 @@ function string2buffer(str) {
 
 // Encode an ArrayBuffer into a base64 string.
 function bufferEncode(value) {
-  return base64js.fromByteArray(value)
+  return window.base64js.fromByteArray(value)
       .replace(/\+/g, "-")
       .replace(/\//g, "_")
       .replace(/=/g, "");

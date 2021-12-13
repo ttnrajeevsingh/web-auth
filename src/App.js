@@ -13,7 +13,17 @@ const hideButton = {
   // display:'none'
 }
 class App extends Component {
-
+  constructor(props){
+    super(props);
+    this.state={
+      userName:''
+    }
+  }
+  handleChange = (e)=>{
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -29,14 +39,13 @@ class App extends Component {
             Biometric auth Demo
           </p>
           
-          
+          <input type="text" onChange={this.handleChange} name="userName" value={this.state.userName}></input>
           
           <button 
             style={buttonStyle} 
             id="reg"
             onClick={()=>{
-              createCreds();
-
+              createCreds(this.state.userName);
             }}
 
           >
@@ -47,7 +56,7 @@ class App extends Component {
                       id="login"
             style={hideButton}
             className='hide' 
-            onClick={validateCreds}
+            onClick={()=>{validateCreds(this.state.userName)}}
           >
             Login
           </button>

@@ -6,12 +6,14 @@ let loginConfig = {
     "allowCredentials": [
       {
         "type": "public-key",
-        "id": "AQsI7DSj/xjEcLlADoxh0YLrvcvkCHnRkGqXK/rW21RahFF5HfD4XOzmHGEVCi7JY1OEK1rITAcf2KnHdf30wBk="
+        "id": "AQsI7DSj/xjEcLlADoxh0YLrvcvkCHnRkGqXK/rW21RahFF5HfD4XOzmHGEVCi7JY1OEK1rITAcf2KnHdf30wBk=",
+        transports: ["nfc", "usb", "ble", "nfc", "usb", "ble", "internal"]
       }
     ],
     "extensions": {
       "txAuthSimple": ""
-    }
+    },
+    "userVerification": "discouraged"
   }
 }
 export {loginConfig};
