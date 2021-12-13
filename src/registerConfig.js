@@ -2,8 +2,8 @@ const regConfig = {
   "publicKey": {
     "challenge": "2AA7iXFAJJRJMJMcRc3bl9R5u68hLQexVkKt9q3wqyA=",
     "rp": {
-      "name": "main--focused-nobel-332a98.netlify.app/",
-      "id": "main--focused-nobel-332a98.netlify.app/"
+      "name": "main--focused-nobel-332a98.netlify.app",
+      "id": "main--focused-nobel-332a98.netlify.app"
     },
     "user": {
       "name": "debug",

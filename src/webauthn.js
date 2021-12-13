@@ -79,6 +79,7 @@ var state = {
   },
 }
 const createCreds = () => {
+  document.getElementById('reg').style.display='none';
   let makeCredentialOptions = regConfig;
   makeCredentialOptions.publicKey.challenge = bufferDecode(makeCredentialOptions.publicKey.challenge);
           makeCredentialOptions.publicKey.user.id = bufferDecode(makeCredentialOptions.publicKey.user.id);
@@ -102,11 +103,13 @@ const createCreds = () => {
 }
 
 const validateCreds = () => {
+  document.getElementById('login').style.display='none';
   let makeAssertionOptions = loginConfig;
   makeAssertionOptions.publicKey.challenge = bufferDecode(makeAssertionOptions.publicKey.challenge);
   makeAssertionOptions.publicKey.allowCredentials.forEach(function (listItem) {
       listItem.id = bufferDecode(listItem.id)
   });
+  makeAssertionOptions.publicKey.userVerification = 'discouraged';
   console.log(makeAssertionOptions);
   navigator.credentials.get({
           publicKey: makeAssertionOptions.publicKey

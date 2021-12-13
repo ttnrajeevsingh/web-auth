@@ -2,7 +2,7 @@ let loginConfig = {
   "publicKey": {
     "challenge": "LdeUWFohT0EUZmRv/LbnlAHmitrMRcCvjIJcYPh9QLk=",
     "timeout": 60000,
-    "rpId": "main--focused-nobel-332a98.netlify.app/",
+    "rpId": "main--focused-nobel-332a98.netlify.app",
     "allowCredentials": [
       {
         "type": "public-key",

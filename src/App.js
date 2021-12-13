@@ -33,12 +33,18 @@ class App extends Component {
           
           <button 
             style={buttonStyle} 
-            onClick={createCreds}
+            id="reg"
+            onClick={()=>{
+              createCreds();
+
+            }}
+
           >
             Register
           </button>
 
           <button 
+                      id="login"
             style={hideButton}
             className='hide' 
             onClick={validateCreds}
