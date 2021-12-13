@@ -81,10 +81,12 @@ function setUser(username) {
 //       });
 // }
 const createCreds = (userName) => {
+  document.getElementById('reg').style.pointerEvents='none';
   setUser(userName);
   makeCredential();
 }
 const validateCreds = (userName) => {
+  document.getElementById('login').style.pointerEvents='none';
   setUser(userName);
   getAssertion()
 }
@@ -121,8 +123,8 @@ function makeCredential() {
                   makeCredentialOptions.publicKey.excludeCredentials[i].id = bufferDecode(makeCredentialOptions.publicKey.excludeCredentials[i].id);
               }
           }
-          makeCredentialOptions.publicKey.rp.name='localhost';
-          makeCredentialOptions.publicKey.rp.id='localhost'
+         // makeCredentialOptions.publicKey.rp.name='localhost';
+         // makeCredentialOptions.publicKey.rp.id='localhost'
           console.log("Credential Creation Options");
           console.log(makeCredentialOptions);
           navigator.credentials.create({
@@ -203,7 +205,7 @@ function getAssertion() {
             listItem.id = bufferDecode(listItem.id)
         });
         console.log(makeAssertionOptions);
-        makeAssertionOptions.publicKey.rpId='localhost'
+       // makeAssertionOptions.publicKey.rpId='localhost'
         
         navigator.credentials.get({
                 publicKey: makeAssertionOptions.publicKey
