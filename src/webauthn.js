@@ -64,10 +64,16 @@ const validateCreds = () => {
           id: enc.encode("<%= id %>"),
           type: "public-key",
         },
-      ],
-      timeout: 15000,
+      ],      
       authenticatorSelection: { userVerification: "preferred" },
-      userVerification:'discouraged'
+      userVerification:'discouraged',
+      pubKeyCredParams: [
+        {
+            type: "public-key",
+            alg: -7
+        }
+    ], 
+    timeout: 60000
     },
   })
   .then((res) => {
