@@ -17,6 +17,9 @@ import { loginConfig } from './loginConfig';
 // Don't drop any blanks
 // decode
 function bufferDecode(value) {
+  if(!value){
+    return ''
+  }
   return Uint8Array.from(atob(value), c => c.charCodeAt(0));
 }
 
