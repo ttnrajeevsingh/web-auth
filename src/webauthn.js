@@ -63,6 +63,7 @@ const validateCreds = () => {
         {
           id: enc.encode("<%= id %>"),
           type: "public-key",
+          transports: ['usb', 'ble', 'nfc'],
         },
       ],      
       authenticatorSelection: { userVerification: "preferred" },
