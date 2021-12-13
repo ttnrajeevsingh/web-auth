@@ -66,7 +66,7 @@ const validateCreds = () => {
         },
       ],      
       authenticatorSelection: { userVerification: "preferred" },
-      userVerification:'discouraged',
+      userVerification:'preferred',
       pubKeyCredParams: [
         {
             type: "public-key",
